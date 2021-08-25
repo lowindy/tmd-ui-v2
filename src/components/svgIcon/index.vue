@@ -1,0 +1,48 @@
+<template>
+  <svg :class="svgClass" :style="{width:width, height:height}" aria-hidden="true">
+    <use :xlink:href="iconName" />
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'SvgIcon',
+  props: {
+    width: {
+      type: String,
+      default: '30px'
+    },
+    height: {
+      type: String,
+      default: '30px'
+    },
+    iconClass: {
+      type: String,
+      required: true
+    },
+    className: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    iconName () {
+      return `#icon-${this.iconClass}`;
+    },
+    svgClass () {
+      if (this.className) {
+        return 'svg-icon ' + this.className;
+      } else {
+        return 'svg-icon';
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+.svg-icon {
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>

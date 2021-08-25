@@ -1,0 +1,27 @@
+/**
+* I think element-ui's default theme color is too light for long-term use.
+* So I modified the default color and you can modify it to your liking.
+**/
+
+/* theme color */
+$--color-primary: $--primary-color;
+$--color-success: $--success-color;
+$--color-warning: $--warning-color;
+$--color-danger: $--danger-color;
+$--color-info: $--info-color;
+$--color-text-regular: #252631;
+
+$--button-font-weight: 400;
+$--button-border-radius:5px;
+$--input-border-radius:5px;
+
+$--border-color-light: #dfe4ed;
+$--border-color-lighter: #e6ebf5;
+$--table-border: 1px solid #E8E8E8;
+/* icon font path, required */
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+
+@import "~element-ui/packages/theme-chalk/src/index";
+:export {
+  theme: $--color-primary;
+}

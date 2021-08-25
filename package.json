@@ -1,0 +1,49 @@
+{
+  "name": "rmgc.beetle.web.admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "test": "vue-cli-service build --mode development",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.0",
+    "js-base64": "^3.6.0",
+    "less": "^4.1.0",
+    "less-loader": "^7.2.1",
+    "moment": "^2.29.1",
+    "node-sass": "^5.0.0",
+    "qs": "^6.9.6",
+    "sass-loader": "^10.1.1",
+    "svg-sprite-loader": "^5.2.1",
+    "sweetalert": "^2.1.2",
+    "underscore": "^1.12.0",
+    "vue": "^2.6.11",
+    "vue-cookie": "^1.1.4",
+    "vue-cookies": "^1.7.4",
+    "vue-faker": "^3.0.0",
+    "vue-router": "^3.4.9",
+    "vue-transition-component": "^3.0.11",
+    "vuedraggable": "^2.24.3",
+    "vuex": "^3.6.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
