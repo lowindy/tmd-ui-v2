@@ -1,14 +1,13 @@
 const debug = process.env.NODE_ENV !== 'production';
 module.exports = {
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     const svgRule = config.module.rule('svg');
     // 清除已有的所有 loader,如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
     svgRule.uses.clear();
     // 添加要替换的 loader
-    svgRule.use('svg-sprite-loader').loader('svg-sprite-loader')
-      .options({
-        symbolId: 'icon-[name]'
-      });
+    svgRule.use('svg-sprite-loader').loader('svg-sprite-loader').options({
+      symbolId: 'icon-[name]',
+    });
   },
   // 根域上下文目录
   publicPath: './',
@@ -25,12 +24,12 @@ module.exports = {
   // 默认babel-loader忽略mode_modules，这里可增加例外的依赖包名
   transpileDependencies: [],
   // webpack的特殊配置
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     if (debug) {
       config.devtool = 'source-map';
     }
     config.externals = {
-      'jquery': 'jQuery'
+      jquery: 'jQuery',
     };
   },
   // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
@@ -46,6 +45,5 @@ module.exports = {
     https: false,
     hotOnly: false,
     proxy: process.env.VUE_APP_API_ADDR,
-    before: app => {}
-  }
+  },
 };

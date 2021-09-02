@@ -28,8 +28,8 @@ export default {
         return meta.activePath;
       }
       return path;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">

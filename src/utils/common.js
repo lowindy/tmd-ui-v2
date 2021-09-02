@@ -4,7 +4,7 @@ export default {
       this.$notify({
         title: '成功',
         message: arguments[0] || '操作成功',
-        type: 'success'
+        type: 'success',
       });
     };
     Vue.prototype.success = function () {
@@ -13,7 +13,7 @@ export default {
         offset: 65,
         showClose: true,
         message: arguments[0] || '操作成功',
-        type: 'success'
+        type: 'success',
       });
     };
     Vue.prototype.fail = function () {
@@ -22,7 +22,7 @@ export default {
         offset: 65,
         showClose: true,
         message: arguments[0] || '操作失败',
-        type: 'error'
+        type: 'error',
       });
     };
     Vue.prototype.alertok = function () {
@@ -33,7 +33,7 @@ export default {
         confirmButtonText: '确定',
         center: true,
         showClose: false,
-        callback: fn
+        callback: fn,
       });
     };
     Vue.prototype.alertfail = function () {
@@ -44,8 +44,8 @@ export default {
         confirmButtonText: '确定',
         center: true,
         showClose: false,
-        callback: fn
+        callback: fn,
       });
     };
-  }
+  },
 };

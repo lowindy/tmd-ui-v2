@@ -14,7 +14,7 @@ module.exports = {
   // 在JSX中使用单引号而不是双引号
   jsxSingleQuote: false,
   // 多行时尽可能打印尾随逗号。（例如，单行数组永远不会出现逗号结尾。） 可选值"<none|es5|all>"，默认none
-  trailingComma: 'none',
+  trailingComma: 'all',
   // 在对象文字中的括号之间打印空格
   bracketSpacing: true,
   // jsx 标签的反尖括号需要换行
@@ -35,5 +35,5 @@ module.exports = {
   // Vue文件脚本和样式标签缩进
   vueIndentScriptAndStyle: false,
   // 换行符使用 lf 结尾是 可选值"<auto|lf|crlf|cr>"
-  endOfLine: 'auto',
+  endOfLine: 'auto'
 };

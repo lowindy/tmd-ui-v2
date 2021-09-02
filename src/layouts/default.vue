@@ -3,7 +3,7 @@
     <header class="header flex-r-a">
       <div class="sidebar-toggle" @click="menuToggleAction()"><svg-icon height="26px" icon-class="menu" width="26px" /></div>
       <div class="flex-1"></div>
-      <div class=" menu-right-btn m-r-15">
+      <div class="menu-right-btn m-r-15">
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
             <div class="btn-box">
@@ -34,14 +34,14 @@ import MenuComponent from './slideMenu';
 import { mapActions, mapGetters } from 'vuex';
 export default {
   components: {
-    MenuComponent
+    MenuComponent,
   },
   computed: {
-    ...mapGetters(['toggleMenu'])
+    ...mapGetters(['toggleMenu']),
   },
   methods: {
-    ...mapActions(['menuToggleAction'])
-  }
+    ...mapActions(['menuToggleAction']),
+  },
 };
 </script>
 <style lang="scss" scoped>

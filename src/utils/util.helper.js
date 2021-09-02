@@ -1,4 +1,3 @@
-
 export default {
   install: function (Vue) {
     Vue.prototype.objContrast = function (newObj, oldObj) {
@@ -36,5 +35,5 @@ export default {
       }
       return data;
     };
-  }
+  },
 };

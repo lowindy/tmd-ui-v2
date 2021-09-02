@@ -18,39 +18,39 @@ import $ from 'jquery';
 import swal from 'sweetalert';
 export default {
   name: 'SingleImgUpload',
-  data: function() {
+  data: function () {
     return {
       isSupport: true,
       isCompleted: false,
       allowTypes: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'],
-      maxSize: 1024 * 1024
+      maxSize: 1024 * 1024,
     };
   },
-  mounted: function() {
+  mounted: function () {
     $('#cfile', this.$el).on('change', this.fileInputChange);
   },
   props: {
     path: String,
     width: {
       type: Number,
-      default: 126
+      default: 126,
     },
     height: {
       type: Number,
-      default: 126
-    }
+      default: 126,
+    },
   },
   methods: {
-    cmdDel: function() {
+    cmdDel: function () {
       this.path = '';
     },
-    cmdShowPic: function() {
+    cmdShowPic: function () {
       $('.viewbox').fadeIn();
     },
-    cmdHidePic: function() {
+    cmdHidePic: function () {
       $('.viewbox').fadeOut(100);
     },
-    fileInputChange: function(event) {
+    fileInputChange: function (event) {
       var files = event.target.files;
       if (files.length === 0) {
         return;
@@ -72,11 +72,11 @@ export default {
       reader.onload = this.readerLoad;
       reader.readAsDataURL(file);
     },
-    readerLoad: function(e) {
+    readerLoad: function (e) {
       this.isCompleted = true;
       this.$emit('upload-completed', e.target.result);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

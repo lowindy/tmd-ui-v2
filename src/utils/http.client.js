@@ -16,7 +16,7 @@ var showLoading = () => {
     loadingInstance = Loading.service({
       lock: true,
       text: '努力加载中...',
-      background: 'rgba(0, 0, 0, 0.7)'
+      background: 'rgba(0, 0, 0, 0.7)',
     });
   }, 500);
 };
@@ -45,14 +45,14 @@ axios.interceptors.request.use(
     showLoading();
     config.data = JSON.stringify(config.data);
     config.headers = {
-      'Content-Type': 'application/json; charset=utf-8'
+      'Content-Type': 'application/json; charset=utf-8',
     };
     return config;
   },
   (error) => {
     hiddenLoading();
     return Promise.reject(error);
-  }
+  },
 );
 
 // http response 拦截器
@@ -64,14 +64,14 @@ axios.interceptors.response.use(
   (error) => {
     hiddenLoading();
     return Promise.reject(error);
-  }
+  },
 );
 
-var clientGet = function(url, params) {
+var clientGet = function (url, params) {
   return new Promise((resolve, reject) => {
     axios
       .get(url, {
-        params: params
+        params: params,
       })
       .then((response) => {
         resolve(response.data);
@@ -79,14 +79,14 @@ var clientGet = function(url, params) {
       .catch((err) => {
         let clientRes = {
           status: err.response.status || '',
-          msg: err.response.data || '异常错误'
+          msg: err.response.data || '异常错误',
         };
         if (err.response.status === 401) {
           if (document.location.hash === '#/login') {
             return;
           }
           router.push({
-            path: '/login'
+            path: '/login',
           });
           clientRes.msg = '未授权';
         }
@@ -94,7 +94,7 @@ var clientGet = function(url, params) {
       });
   });
 };
-var clientPostJson = function(url, data) {
+var clientPostJson = function (url, data) {
   return new Promise((resolve, reject) => {
     axios
       .post(url, data)
@@ -104,18 +104,18 @@ var clientPostJson = function(url, data) {
       .catch((err) => {
         let clientRes = {
           status: err.response.status,
-          msg: err.response.data || '异常错误'
+          msg: err.response.data || '异常错误',
         };
         reject(clientRes);
       });
   });
 };
-var clientLocalPost = function(url, data) {
+var clientLocalPost = function (url, data) {
   return new Promise((resolve, reject) => {
     axios
       .post(url, data, {
         baseURL: '',
-        timeout: 60000 * 10
+        timeout: 60000 * 10,
       })
       .then((response) => {
         resolve(response.data);
@@ -125,12 +125,12 @@ var clientLocalPost = function(url, data) {
         if (err && err.response) {
           clientRes = {
             status: err.response.status,
-            msg: err.response.data || '异常错误'
+            msg: err.response.data || '异常错误',
           };
         } else {
           clientRes = {
             status: '',
-            msg: err || '异常错误'
+            msg: err || '异常错误',
           };
         }
         reject(clientRes);
@@ -139,20 +139,20 @@ var clientLocalPost = function(url, data) {
 };
 
 var httpClient = {
-  install: function(Vue) {
+  install: function (Vue) {
     Object.defineProperties(Vue.prototype, {
       $client: {
-        get: function() {
+        get: function () {
           var self = this;
           return {
             get: clientGet.bind(self),
             post: clientPostJson.bind(self),
-            localPost: clientLocalPost.bind(self)
+            localPost: clientLocalPost.bind(self),
           };
-        }
-      }
+        },
+      },
     });
-  }
+  },
 };
 
 if (window.Vue) {
@@ -164,5 +164,5 @@ export default httpClient;
 export const AjaxUtil = {
   localPost: clientLocalPost,
   get: clientGet,
-  post: clientPostJson
+  post: clientPostJson,
 };

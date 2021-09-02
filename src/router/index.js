@@ -14,7 +14,7 @@ const router = new Router({
     // 不带框架的页面
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/home',
     },
     // 带框架的页面路由
     {
@@ -22,7 +22,7 @@ const router = new Router({
       name: 'layout',
       component: LayoutView,
       meta: {
-        needAuth: true
+        needAuth: true,
       },
       children: [
         {
@@ -30,11 +30,11 @@ const router = new Router({
           name: 'home',
           component: HomeView,
           meta: {
-            needAuth: true
-          }
-        }
-      ]
-    }
-  ]
+            needAuth: true,
+          },
+        },
+      ],
+    },
+  ],
 });
 export default router;

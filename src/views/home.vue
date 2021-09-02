@@ -1,8 +1,10 @@
 <template>
-  <div>
-    home
-  </div>
+  <div>home</div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+};
 </script>
